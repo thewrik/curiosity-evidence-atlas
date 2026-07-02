@@ -25,6 +25,25 @@ The page answers those questions with data from the dataset:
 - what this dataset can identify now
 - what needs FactIQ or another external data source later
 
+## FactIQ Drilldown RQ
+
+I drilled into the FactIQ repo and added one concrete research-question dossier:
+
+> Do companies that Nomad framed as sharing scale economies with customers show
+> a measurable pattern of lower customer prices or better customer value, rising
+> volume/revenue, and durable economics, without needing high near-term margins
+> to make the investment work?
+
+See:
+
+- `site/scale-sharing.html`
+- `site/data/scale-sharing-rq.json`
+- `scripts/build_scale_sharing_rq.py`
+
+This maps to the memory trail in the local dataset: consumer value proposition,
+patience, long-term horizon, Costco, Amazon, Wal-Mart, and the extracted
+"scale-economics shared" passage.
+
 ## Data
 
 Raw source:

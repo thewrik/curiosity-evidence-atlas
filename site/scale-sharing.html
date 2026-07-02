@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Scale-Sharing Test</title>
+  <meta name="description" content="A FactIQ-ready research question seeded from the Nomad letters dataset.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="progress"></div>
+  <nav class="site-nav" aria-label="Sections">
+    <a class="wordmark" href="index.html">Nomad Questions</a>
+    <div class="nav-links">
+      <a href="#rq">RQ</a>
+      <a href="#seed">Seed</a>
+      <a href="#hypotheses">Hypotheses</a>
+      <a href="#factiq">FactIQ</a>
+    </div>
+  </nav>
+
+  <header class="hero rq-hero" id="rq">
+    <div class="hero-copy">
+      <p class="kicker">FactIQ drilldown</p>
+      <h1 id="rq-title">The Scale-Sharing Test</h1>
+      <p id="rq-subtitle" class="dek"></p>
+      <p id="rq-question" class="rq-question"></p>
+    </div>
+  </header>
+
+  <main>
+    <section class="chapter" id="why">
+      <div class="section-inner split">
+        <div>
+          <p class="chapter-no">Why This RQ</p>
+          <h2>It Connects The Memory Trail To Outcome Data</h2>
+          <p class="subhead">
+            The local dataset tells us what Nomad cared about. FactIQ is useful
+            only if it helps test what happened afterward.
+          </p>
+          <p>
+            The research question is deliberately narrow: take Nomad's recurring
+            interest in consumer value, patience, and scale economies, then ask
+            whether the outside data shows a measurable pattern.
+          </p>
+        </div>
+        <figure class="panel">
+          <h3>Memory fit</h3>
+          <div id="memory-fit" class="bullet-list"></div>
+          <figcaption>Derived from the local Nomad dataset and the FactIQ repo docs.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="chapter dark" id="seed">
+      <div class="section-inner">
+        <p class="chapter-no">Seed Universe</p>
+        <h2>The Companies To Test First</h2>
+        <p class="subhead">
+          These are not arbitrary tickers. They are recurring examples from the
+          letters, with first-mention years that become test anchors.
+        </p>
+        <div id="seed-companies" class="company-grid"></div>
+      </div>
+    </section>
+
+    <section class="chapter" id="hypotheses">
+      <div class="section-inner">
+        <p class="chapter-no">Hypotheses</p>
+        <h2>Turn The Idea Into Measurable Claims</h2>
+        <div id="hypothesis-grid" class="answer-grid"></div>
+      </div>
+    </section>
+
+    <section class="chapter dark" id="factiq">
+      <div class="section-inner split">
+        <div>
+          <p class="chapter-no">FactIQ Execution</p>
+          <h2>What The Repo Makes Possible</h2>
+          <p class="subhead">
+            The FactIQ plugin's value is not a generic database. It is the loop:
+            discover data, query it, publish claim-titled charts, and preserve lineage.
+          </p>
+          <div id="repo-basis" class="basis-list"></div>
+        </div>
+        <figure class="panel dark-panel">
+          <h3>Starter tool calls</h3>
+          <div id="starter-queries" class="query-list"></div>
+          <figcaption>
+            The FactIQ plugin was installed after this session started; these
+            calls are ready for the next FactIQ-enabled thread.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="section-inner">
+        <figure class="panel dark-panel wide-panel">
+          <h3>First output to build</h3>
+          <div id="first-output" class="output-plan"></div>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      This page is seeded from the Nomad letters dataset and the FactIQ plugin
+      repo. No FactIQ MCP query was executed in this already-running thread.
+    </p>
+  </footer>
+
+  <script src="scale-sharing.js"></script>
+</body>
+</html>
