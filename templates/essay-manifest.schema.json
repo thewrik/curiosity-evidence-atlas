@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Curiosity Evidence Essay Manifest",
+  "type": "object",
+  "required": ["id", "title", "question", "thesis", "chapters", "claims"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "question": { "type": "string" },
+    "thesis": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["sketch", "researching", "drafting", "verifying", "published"]
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "purpose"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "purpose": { "type": "string" },
+          "chart_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "type", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "claim": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "mechanism",
+              "empirical",
+              "definition",
+              "historical",
+              "anecdotal",
+              "normative"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["untested", "supported", "mixed", "contradicted", "source-needed"]
+          },
+          "evidence_needed": { "type": "string" },
+          "sources": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "factiq": {
+            "type": "object",
+            "properties": {
+              "schemas": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "datasets": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "chart_spec_path": { "type": "string" },
+              "share_url": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

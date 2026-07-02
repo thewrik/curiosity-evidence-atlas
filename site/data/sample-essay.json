@@ -1,0 +1,104 @@
+{
+  "title": "The Patience Premium",
+  "kicker": "A prototype visual essay",
+  "subtitle": "Do patient investors win because they see more clearly, or because everyone else is forced to look away too soon?",
+  "chapters": [
+    {
+      "id": "curiosity",
+      "label": "I",
+      "title": "The Question That Keeps Coming Back",
+      "subhead": "Long-term thinking sounds noble. The harder question is whether it is measurable.",
+      "body": [
+        "The investor-letter trail found in local notes circles the same idea again and again: patience is not a mood, it is a structural advantage. A patient investor can wait through periods that make other investors sell, explain, de-risk, or chase the next quarter.",
+        "The risk is that this becomes a bedtime story for people who like calm prose. A visual essay should make the claim earn its place: what would patience have to predict, survive, or reveal in data?"
+      ],
+      "claims": ["c1", "c2"]
+    },
+    {
+      "id": "mechanism",
+      "label": "II",
+      "title": "A Small Toy Model",
+      "subhead": "Time horizon changes which cash flows are visible.",
+      "body": [
+        "Move the horizon slider. Short horizons overweight the next few periods. Long horizons make durable compounding visible, but only if the business survives the wait.",
+        "This is not proof. It is a map of the mechanism that later charts have to test."
+      ],
+      "claims": ["c3"]
+    },
+    {
+      "id": "data",
+      "label": "III",
+      "title": "Where FactIQ Enters",
+      "subhead": "The data layer should answer the exact claims, not decorate the essay.",
+      "body": [
+        "FactIQ can search official datasets, query normalized tables, compute derived metrics, publish charts, and preserve lineage. For this essay, that means market data, fundamentals, rates, inflation, and earnings-call language can become auditable figures.",
+        "The first research pass should create a detailed FactIQ report. The second pass should promote only the strongest figures into the public essay."
+      ],
+      "claims": ["c4", "c5"]
+    },
+    {
+      "id": "source-trail",
+      "label": "IV",
+      "title": "The Source Trail Is The Product",
+      "subhead": "A reader should be able to disagree without getting lost.",
+      "body": [
+        "Every serious factual sentence should map back to the claim ledger. Every chart should say what was queried, how it was transformed, and why the caveat matters.",
+        "That auditability is the difference between a persuasive essay and an attractive opinion."
+      ],
+      "claims": ["c6"]
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "claim": "The local investor-letter artifact repeatedly emphasizes patience, management alignment, consumer value, and business quality.",
+      "status": "supported",
+      "type": "source",
+      "evidence": "Local Codex artifact: Nomad Letters Research Site data."
+    },
+    {
+      "id": "c2",
+      "claim": "A patience thesis is weak unless it can be tied to observable outcomes or falsifiable intermediate claims.",
+      "status": "working",
+      "type": "method",
+      "evidence": "Research design principle."
+    },
+    {
+      "id": "c3",
+      "claim": "The shorter the investor horizon, the less weight future durable cash flows receive in the decision.",
+      "status": "mechanism",
+      "type": "model",
+      "evidence": "Prototype slider model."
+    },
+    {
+      "id": "c4",
+      "claim": "FactIQ can provide market data, fundamentals, official macro data, and earnings-call search through MCP tools.",
+      "status": "supported",
+      "type": "tool",
+      "evidence": "FactIQ plugin README and skill file."
+    },
+    {
+      "id": "c5",
+      "claim": "FactIQ is better for charts and data lineage than for academic literature review.",
+      "status": "supported",
+      "type": "tool",
+      "evidence": "FactIQ plugin scope and exposed tools."
+    },
+    {
+      "id": "c6",
+      "claim": "The RentControl reference succeeds partly because it lets story, mechanism, evidence, and sources coexist without becoming a dashboard.",
+      "status": "supported",
+      "type": "design",
+      "evidence": "Reference-site inspection."
+    }
+  ],
+  "sampleData": [
+    { "horizon": 1, "visibleValue": 42, "ignoredValue": 58 },
+    { "horizon": 2, "visibleValue": 51, "ignoredValue": 49 },
+    { "horizon": 3, "visibleValue": 61, "ignoredValue": 39 },
+    { "horizon": 5, "visibleValue": 74, "ignoredValue": 26 },
+    { "horizon": 8, "visibleValue": 86, "ignoredValue": 14 },
+    { "horizon": 10, "visibleValue": 91, "ignoredValue": 9 }
+  ]
+}
+
