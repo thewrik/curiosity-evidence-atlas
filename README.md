@@ -40,7 +40,11 @@ repeatable essay pipeline.
 
 Published site:
 
-https://thewrik.github.io/curiosity-evidence-atlas/
+https://curiosity-evidence-atlas.surge.sh/
+
+GitHub repo:
+
+https://github.com/thewrik/curiosity-evidence-atlas
 
 The prototype is static. Open:
 
