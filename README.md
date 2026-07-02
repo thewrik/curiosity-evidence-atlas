@@ -38,6 +38,10 @@ repeatable essay pipeline.
 
 ## Open The Prototype
 
+Published site:
+
+https://thewrik.github.io/curiosity-evidence-atlas/
+
 The prototype is static. Open:
 
 ```bash
@@ -79,4 +83,3 @@ That can connect the Nomad investor-letter artifact already present in local
 Codex outputs to public market data, rates, sector cycles, earnings-call
 language, and valuation/composition charts. It also gives you a personal spine:
 curiosity first, evidence second, beautiful essay third.
-
