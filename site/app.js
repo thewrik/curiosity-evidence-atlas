@@ -1,8 +1,3 @@
-const state = {
-  essay: null,
-  horizon: 3
-};
-
 const progress = document.getElementById("progress");
 
 window.addEventListener("scroll", () => {
@@ -11,126 +6,173 @@ window.addEventListener("scroll", () => {
   progress.style.width = `${pct}%`;
 });
 
-const embeddedEssay = document.getElementById("essay-data");
+fetch("data/nomad-analysis.json")
+  .then((response) => response.json())
+  .then(render)
+  .catch((error) => {
+    document.body.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="load-error">Could not load analysis data: ${escapeHtml(error.message)}</div>`
+    );
+  });
 
-if (embeddedEssay) {
-  const essay = JSON.parse(embeddedEssay.textContent);
-  state.essay = essay;
-  renderEssay(essay);
-} else {
-  fetch("data/sample-essay.json")
-    .then((response) => response.json())
-    .then((essay) => {
-      state.essay = essay;
-      renderEssay(essay);
-    });
+function render(data) {
+  renderHeroStats(data.summary);
+  renderAnswers(data.answer_cards);
+  renderThemeBars(data.theme_counts.slice(0, 8), data.summary.letter_count);
+  renderHeatmap(data.theme_year_matrix, data.theme_counts.slice(0, 6).map((item) => item.name));
+  renderCompanyBars(data.top_companies.slice(0, 8));
+  renderCompanyTimeline(data.recurring_companies.slice(0, 7), data.summary.date_span);
+  renderLetterTable(data.research_rich_letters.slice(0, 6));
+  renderExternalQuestions(data.external_questions);
 }
 
-function renderEssay(essay) {
-  document.getElementById("kicker").textContent = essay.kicker;
-  document.getElementById("title").textContent = essay.title;
-  document.getElementById("subtitle").textContent = essay.subtitle;
-
-  const root = document.getElementById("essay");
-  root.innerHTML = essay.chapters.map(renderChapter).join("");
-  document.getElementById("claims").innerHTML = essay.claims.map(renderClaim).join("");
-
-  const slider = document.getElementById("horizon-slider");
-  if (slider) {
-    slider.addEventListener("input", (event) => {
-      state.horizon = Number(event.target.value);
-      updateMechanism();
-    });
-    updateMechanism();
-  }
+function renderHeroStats(summary) {
+  const stats = [
+    ["Letters", summary.letter_count],
+    ["Companies", summary.company_count],
+    ["Timeline Items", summary.timeline_item_count],
+    ["Artifacts", summary.artifact_count],
+    ["Period", summary.date_span]
+  ];
+  document.getElementById("hero-stats").innerHTML = stats
+    .map(([label, value]) => `<div><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`)
+    .join("");
 }
 
-function renderChapter(chapter, index) {
-  const paragraphs = chapter.body
-    .map((paragraph, paragraphIndex) => {
-      const className = index === 0 && paragraphIndex === 0 ? " class=\"dropcap\"" : "";
-      return `<p${className}>${escapeHtml(paragraph)}</p>`;
-    });
-
-  const sidenote = renderSidenote(chapter.claims);
-  const body = [paragraphs[0], sidenote, ...paragraphs.slice(1)].join("");
-  const mechanism = chapter.id === "mechanism" ? renderMechanism() : "";
-
-  return `
-    <section class="chapter" id="${chapter.id}">
-      <p class="chapter-no">Chapter ${chapter.label}</p>
-      <h2>${escapeHtml(chapter.title)}</h2>
-      <p class="subhead">${escapeHtml(chapter.subhead)}</p>
-      <div class="chapter-body">
-        ${body}
-        ${mechanism}
-      </div>
-    </section>
-  `;
+function renderAnswers(cards) {
+  document.getElementById("answer-cards").innerHTML = cards
+    .map((card, index) => `
+      <article class="answer-card">
+        <span class="answer-no">${String(index + 1).padStart(2, "0")}</span>
+        <h3>${escapeHtml(card.question)}</h3>
+        <p>${escapeHtml(card.answer)}</p>
+        <small>${escapeHtml(card.evidence)}</small>
+      </article>
+    `)
+    .join("");
 }
 
-function renderSidenote(claimIds) {
-  if (!state.essay || !claimIds || claimIds.length === 0) return "";
-  const claims = claimIds
-    .map((id) => state.essay.claims.find((claim) => claim.id === id))
-    .filter(Boolean);
-  if (claims.length === 0) return "";
-  const text = claims.map((claim) => `<b>${claim.id}</b>: ${escapeHtml(claim.claim)}`).join("<br><br>");
-  return `<aside class="sidenote">${text}</aside>`;
-}
-
-function renderMechanism() {
-  return `
-    <div class="mechanism-card" aria-label="Interactive horizon model">
-      <div class="mechanism-head">
-        <h3>What the horizon lets you see</h3>
-        <div class="metric"><span id="horizon-years">3</span> year horizon</div>
-      </div>
-      <div class="bars">
-        <div class="bar-row">
-          <span>Visible value</span>
-          <div class="track"><div id="visible-fill" class="fill"></div></div>
-          <span id="visible-label">61%</span>
+function renderThemeBars(rows, total) {
+  const max = Math.max(...rows.map((row) => row.letters));
+  document.getElementById("theme-bars").innerHTML = rows
+    .map((row) => `
+      <div class="bar-row">
+        <span class="bar-label">${escapeHtml(row.name)}</span>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:${(row.letters / max) * 100}%"></div>
         </div>
-        <div class="bar-row">
-          <span>Ignored value</span>
-          <div class="track"><div id="ignored-fill" class="fill ignored"></div></div>
-          <span id="ignored-label">39%</span>
-        </div>
+        <span class="bar-value">${row.letters}/${total}</span>
       </div>
-      <label class="horizon-control" for="horizon-slider">
-        <input id="horizon-slider" type="range" min="1" max="10" value="3" step="1">
-        <output id="horizon-output">3 years</output>
-      </label>
-      <p class="chart-note">Prototype data only. A real essay would replace this toy output with FactIQ-backed charts and lineage.</p>
+    `)
+    .join("");
+}
+
+function renderHeatmap(rows, themes) {
+  const cells = rows.flatMap((row) => {
+    return themes.map((theme) => {
+      const value = Number(row[theme] || 0);
+      return `<div class="heat-cell heat-${value}" title="${escapeHtml(theme)} ${row.year}: ${value}">${value || ""}</div>`;
+    });
+  }).join("");
+
+  document.getElementById("theme-heatmap").innerHTML = `
+    <div class="heat-grid" style="--cols:${themes.length}">
+      <div class="heat-years">
+        ${rows.map((row) => `<span>${row.year}</span>`).join("")}
+      </div>
+      <div class="heat-labels">
+        ${themes.map((theme) => `<span>${shortTheme(theme)}</span>`).join("")}
+      </div>
+      <div class="heat-cells">${cells}</div>
     </div>
   `;
 }
 
-function updateMechanism() {
-  const data = state.essay.sampleData;
-  const closest = data.reduce((best, row) => {
-    return Math.abs(row.horizon - state.horizon) < Math.abs(best.horizon - state.horizon) ? row : best;
-  }, data[0]);
-
-  const visible = closest.visibleValue;
-  const ignored = closest.ignoredValue;
-  document.getElementById("horizon-years").textContent = state.horizon;
-  document.getElementById("horizon-output").textContent = `${state.horizon} years`;
-  document.getElementById("visible-fill").style.width = `${visible}%`;
-  document.getElementById("ignored-fill").style.width = `${ignored}%`;
-  document.getElementById("visible-label").textContent = `${visible}%`;
-  document.getElementById("ignored-label").textContent = `${ignored}%`;
+function renderCompanyBars(rows) {
+  const max = Math.max(...rows.map((row) => row.mentions));
+  document.getElementById("company-bars").innerHTML = rows
+    .map((row) => `
+      <div class="bar-row">
+        <span class="bar-label">${escapeHtml(row.name)}</span>
+        <div class="bar-track">
+          <div class="bar-fill amber" style="width:${(row.mentions / max) * 100}%"></div>
+        </div>
+        <span class="bar-value">${row.mentions}</span>
+      </div>
+    `)
+    .join("");
 }
 
-function renderClaim(claim) {
-  return `
-    <article class="claim-card">
-      <div class="claim-meta"><span>${escapeHtml(claim.status)}</span><span>${escapeHtml(claim.type)}</span></div>
-      <h3>${escapeHtml(claim.claim)}</h3>
-      <p>${escapeHtml(claim.evidence)}</p>
-    </article>
+function renderCompanyTimeline(rows, span) {
+  const [minYear, maxYear] = span.split("-").map(Number);
+  const range = maxYear - minYear || 1;
+  const ticks = Array.from({ length: maxYear - minYear + 1 }, (_, index) => minYear + index);
+  document.getElementById("company-timeline").innerHTML = `
+    <div class="timeline-axis">${ticks.map((year) => `<span>${year}</span>`).join("")}</div>
+    ${rows.map((row) => {
+      const left = ((row.first_year - minYear) / range) * 100;
+      const width = Math.max(((row.last_year - row.first_year) / range) * 100, 3);
+      return `
+        <div class="time-row">
+          <span class="time-label">${escapeHtml(row.name)}</span>
+          <div class="time-track">
+            <div class="time-window" style="left:${left}%;width:${width}%"></div>
+          </div>
+          <span class="time-years">${row.first_year}-${row.last_year}</span>
+        </div>
+      `;
+    }).join("")}
   `;
+}
+
+function renderLetterTable(rows) {
+  document.getElementById("letter-table").innerHTML = `
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Letter</th>
+          <th>Claims</th>
+          <th>Artifacts</th>
+          <th>Companies</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map((row) => `
+          <tr>
+            <td>${row.year}</td>
+            <td>${escapeHtml(row.title)}</td>
+            <td>${row.claim_count}</td>
+            <td>${row.artifact_count}</td>
+            <td>${row.company_count}</td>
+          </tr>
+        `).join("")}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderExternalQuestions(rows) {
+  document.getElementById("external-questions").innerHTML = rows
+    .map((row) => `
+      <article class="next-card">
+        <h3>${escapeHtml(row.question)}</h3>
+        <p><b>Needs:</b> ${escapeHtml(row.needs)}</p>
+        <p><b>FactIQ fit:</b> ${escapeHtml(row.factiq_fit)}</p>
+      </article>
+    `)
+    .join("");
+}
+
+function shortTheme(theme) {
+  return theme
+    .replace("Consumer Value Proposition", "Consumer value")
+    .replace("Management Alignment", "Alignment")
+    .replace("Patience & Long-Term Horizon", "Patience")
+    .replace("Regulation & Industry Structure", "Regulation")
+    .replace("Portfolio Construction", "Portfolio")
+    .replace("Capital Allocation", "Capital");
 }
 
 function escapeHtml(value) {

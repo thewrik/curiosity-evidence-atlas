@@ -1,0 +1,1607 @@
+{
+  "meta": {
+    "title": "Nomad Letters Research Site",
+    "source_pdf": "/Users/wrikkarmakar/Library/Mobile Documents/com~apple~CloudDocs/Full_Collection_Nomad_Letters_.pdf",
+    "generated_at": "2026-04-29T01:57:58",
+    "letter_count": 24,
+    "company_count": 45,
+    "notes": [
+      "Phase 1 derives structure and synthesis from the letters themselves.",
+      "Historical context fields are scaffolded but intentionally light until a source-linked enrichment pass is added.",
+      "Low-confidence company entities are flagged for review instead of guessed into tickers."
+    ],
+    "source_data_file": "/Users/wrikkarmakar/Documents/Codex/2026-07-03/explore/outputs/curiosity-evidence-atlas/site/data/raw/research-data.json",
+    "derived_at": "2026-07-03",
+    "note": "Derived only from the local Nomad letters dataset; no external market data used."
+  },
+  "summary": {
+    "letter_count": 24,
+    "company_count": 45,
+    "timeline_item_count": 160,
+    "artifact_count": 65,
+    "date_span": "2001-2013",
+    "top_theme": "Consumer Value Proposition",
+    "top_company": "Costco"
+  },
+  "answer_cards": [
+    {
+      "question": "What is the core philosophy in the letters?",
+      "answer": "Consumer Value Proposition appears in 24/24 letters, Management Alignment in 23/24, and Patience & Long-Term Horizon in 20/24.",
+      "evidence": "Counts from the per-letter `themes` field.",
+      "chart": "theme_counts"
+    },
+    {
+      "question": "Which companies carry the recurring examples?",
+      "answer": "Costco, Amazon, Stagecoach, Berkshire Hathaway, and Matichon are the top five recurring company examples in the extracted company mentions.",
+      "evidence": "Counts from each letter's extracted company list.",
+      "chart": "top_companies"
+    },
+    {
+      "question": "Is this mostly a stock-picking archive or a mental-model archive?",
+      "answer": "It is both, but the extracted structure says the mental-model layer is the durable one: the same themes recur across many different companies and years.",
+      "evidence": "Theme recurrence is broader than any single company recurrence.",
+      "chart": "models"
+    },
+    {
+      "question": "Which letters deserve a second research pass first?",
+      "answer": "The richest starting points are the letters with the highest combined count of claims, artifacts, and company examples.",
+      "evidence": "Ranked from claims + artifacts + company mentions per letter.",
+      "chart": "research_rich_letters"
+    },
+    {
+      "question": "What can this dataset not answer by itself?",
+      "answer": "It can identify what Nomad claimed and emphasized, but it cannot prove whether the claims were right without outside market, fundamentals, and macro data.",
+      "evidence": "The local dataset contains extracted text structure, not outcome data.",
+      "chart": "next_questions"
+    }
+  ],
+  "theme_counts": [
+    {
+      "name": "Consumer Value Proposition",
+      "letters": 24,
+      "share": 100.0
+    },
+    {
+      "name": "Management Alignment",
+      "letters": 23,
+      "share": 95.8
+    },
+    {
+      "name": "Patience & Long-Term Horizon",
+      "letters": 20,
+      "share": 83.3
+    },
+    {
+      "name": "Regulation & Industry Structure",
+      "letters": 16,
+      "share": 66.7
+    },
+    {
+      "name": "Portfolio Construction",
+      "letters": 15,
+      "share": 62.5
+    },
+    {
+      "name": "Capital Allocation",
+      "letters": 8,
+      "share": 33.3
+    },
+    {
+      "name": "Behavioral Psychology",
+      "letters": 6,
+      "share": 25.0
+    },
+    {
+      "name": "Business Quality & Moats",
+      "letters": 6,
+      "share": 25.0
+    },
+    {
+      "name": "Scale Economies Shared",
+      "letters": 1,
+      "share": 4.2
+    }
+  ],
+  "theme_year_matrix": [
+    {
+      "year": 2001,
+      "Consumer Value Proposition": 1,
+      "Management Alignment": 1,
+      "Patience & Long-Term Horizon": 1,
+      "Regulation & Industry Structure": 0,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 1,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 0
+    },
+    {
+      "year": 2002,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 1,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 0,
+      "Behavioral Psychology": 1,
+      "Business Quality & Moats": 1
+    },
+    {
+      "year": 2003,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 1,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 2,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 0
+    },
+    {
+      "year": 2004,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 1,
+      "Regulation & Industry Structure": 1,
+      "Portfolio Construction": 2,
+      "Capital Allocation": 1,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 1
+    },
+    {
+      "year": 2005,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 1,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 0,
+      "Behavioral Psychology": 1,
+      "Business Quality & Moats": 1
+    },
+    {
+      "year": 2006,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 1,
+      "Regulation & Industry Structure": 2,
+      "Portfolio Construction": 2,
+      "Capital Allocation": 0,
+      "Behavioral Psychology": 1,
+      "Business Quality & Moats": 0
+    },
+    {
+      "year": 2007,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 1,
+      "Regulation & Industry Structure": 2,
+      "Portfolio Construction": 2,
+      "Capital Allocation": 1,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 0
+    },
+    {
+      "year": 2008,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 1,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 1,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 1
+    },
+    {
+      "year": 2009,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 2,
+      "Portfolio Construction": 2,
+      "Capital Allocation": 0,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 0
+    },
+    {
+      "year": 2010,
+      "Consumer Value Proposition": 1,
+      "Management Alignment": 0,
+      "Patience & Long-Term Horizon": 1,
+      "Regulation & Industry Structure": 0,
+      "Portfolio Construction": 0,
+      "Capital Allocation": 0,
+      "Behavioral Psychology": 1,
+      "Business Quality & Moats": 1
+    },
+    {
+      "year": 2011,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 1,
+      "Portfolio Construction": 0,
+      "Capital Allocation": 1,
+      "Behavioral Psychology": 1,
+      "Business Quality & Moats": 1
+    },
+    {
+      "year": 2012,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 2,
+      "Regulation & Industry Structure": 2,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 0,
+      "Behavioral Psychology": 0,
+      "Business Quality & Moats": 0
+    },
+    {
+      "year": 2013,
+      "Consumer Value Proposition": 2,
+      "Management Alignment": 2,
+      "Patience & Long-Term Horizon": 1,
+      "Regulation & Industry Structure": 2,
+      "Portfolio Construction": 1,
+      "Capital Allocation": 1,
+      "Behavioral Psychology": 1,
+      "Business Quality & Moats": 0
+    }
+  ],
+  "mental_models": [
+    {
+      "name": "Alignment Over Activity",
+      "letters": 24,
+      "share": 100.0
+    },
+    {
+      "name": "Simple Systems",
+      "letters": 14,
+      "share": 58.3
+    },
+    {
+      "name": "Psychology Of Crowds",
+      "letters": 13,
+      "share": 54.2
+    },
+    {
+      "name": "Contrarian Opportunity",
+      "letters": 2,
+      "share": 8.3
+    },
+    {
+      "name": "Inactivity As Edge",
+      "letters": 2,
+      "share": 8.3
+    },
+    {
+      "name": "Detective Work",
+      "letters": 1,
+      "share": 4.2
+    },
+    {
+      "name": "Cancer Surgery",
+      "letters": 1,
+      "share": 4.2
+    }
+  ],
+  "top_companies": [
+    {
+      "name": "Costco",
+      "mentions": 9,
+      "first_year": 2002,
+      "last_year": 2013,
+      "span_years": 12,
+      "ticker": "COST",
+      "sector": "Membership retail",
+      "moat_summary": "This is a very simple and honest consumer proposition in the sense that the membership fee buys the customer's loyalty (and is almost all profit) and Costco in exchange sells goods whils t just\u2026",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2003",
+          "year": 2003,
+          "period_end": "2003-06-30"
+        },
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2005-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2005",
+          "year": 2005,
+          "period_end": "2005-06-30"
+        },
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "2008-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2008",
+          "year": 2008,
+          "period_end": "2008-12-31"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        },
+        {
+          "letter_id": "2010-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2010",
+          "year": 2010,
+          "period_end": "2010-06-30"
+        },
+        {
+          "letter_id": "2013-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2013",
+          "year": 2013,
+          "period_end": "2013-06-30"
+        }
+      ]
+    },
+    {
+      "name": "Amazon",
+      "mentions": 8,
+      "first_year": 2006,
+      "last_year": 2011,
+      "span_years": 6,
+      "ticker": "AMZN",
+      "sector": "Internet retail and cloud platforms",
+      "moat_summary": "Air Asia is an example of scale -economics shared, which like Amazon, Costco, Carpetright and elements of other businesses in the portfolio (Geico, Nebraska Furniture Mart) have come to dominate\u2026",
+      "letters": [
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        },
+        {
+          "letter_id": "2007-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2007",
+          "year": 2007,
+          "period_end": "2007-06-30"
+        },
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "2008-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2008",
+          "year": 2008,
+          "period_end": "2008-12-31"
+        },
+        {
+          "letter_id": "2009-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2009",
+          "year": 2009,
+          "period_end": "2009-06-30"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        },
+        {
+          "letter_id": "2010-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2010",
+          "year": 2010,
+          "period_end": "2010-06-30"
+        },
+        {
+          "letter_id": "2011-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2011",
+          "year": 2011,
+          "period_end": "2011-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Stagecoach",
+      "mentions": 7,
+      "first_year": 2002,
+      "last_year": 2009,
+      "span_years": 8,
+      "ticker": null,
+      "sector": "Passenger transport",
+      "moat_summary": "This time I would like to discuss our investment in Stagecoach (8.6% of Partnership assets) and Costco Wholesale (3.1% of Partnership assets).",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2003",
+          "year": 2003,
+          "period_end": "2003-12-31"
+        },
+        {
+          "letter_id": "2004-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2004",
+          "year": 2004,
+          "period_end": "2004-06-30"
+        },
+        {
+          "letter_id": "2006-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2006",
+          "year": 2006,
+          "period_end": "2006-06-30"
+        },
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        },
+        {
+          "letter_id": "2007-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2007",
+          "year": 2007,
+          "period_end": "2007-12-31"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        }
+      ]
+    },
+    {
+      "name": "Berkshire Hathaway",
+      "mentions": 6,
+      "first_year": 2002,
+      "last_year": 2009,
+      "span_years": 8,
+      "ticker": "BRK",
+      "sector": "Diversified holding company",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2004-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2004",
+          "year": 2004,
+          "period_end": "2004-06-30"
+        },
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2005-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2005",
+          "year": 2005,
+          "period_end": "2005-06-30"
+        },
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        }
+      ]
+    },
+    {
+      "name": "Matichon",
+      "mentions": 5,
+      "first_year": 2001,
+      "last_year": 2005,
+      "span_years": 5,
+      "ticker": null,
+      "sector": "Thai media and publishing",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2001-12-31-annual-letter",
+          "title": "18 January 2002 Letter",
+          "year": 2001,
+          "period_end": "2001-12-31"
+        },
+        {
+          "letter_id": "2002-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2002",
+          "year": 2002,
+          "period_end": "2002-06-30"
+        },
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2003",
+          "year": 2003,
+          "period_end": "2003-06-30"
+        },
+        {
+          "letter_id": "2005-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2005",
+          "year": 2005,
+          "period_end": "2005-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Marathon",
+      "mentions": 4,
+      "first_year": 2001,
+      "last_year": 2006,
+      "span_years": 6,
+      "ticker": null,
+      "sector": null,
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2001-12-31-annual-letter",
+          "title": "18 January 2002 Letter",
+          "year": 2001,
+          "period_end": "2001-12-31"
+        },
+        {
+          "letter_id": "2004-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2004",
+          "year": 2004,
+          "period_end": "2004-06-30"
+        },
+        {
+          "letter_id": "2006-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2006",
+          "year": 2006,
+          "period_end": "2006-06-30"
+        },
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Wal-Mart",
+      "mentions": 4,
+      "first_year": 2004,
+      "last_year": 2012,
+      "span_years": 9,
+      "ticker": "WMT",
+      "sector": "Mass-market retail",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2007-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2007",
+          "year": 2007,
+          "period_end": "2007-06-30"
+        },
+        {
+          "letter_id": "2009-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2009",
+          "year": 2009,
+          "period_end": "2009-06-30"
+        },
+        {
+          "letter_id": "2012-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2012",
+          "year": 2012,
+          "period_end": "2012-06-30"
+        }
+      ]
+    },
+    {
+      "name": "International Speedway",
+      "mentions": 3,
+      "first_year": 2001,
+      "last_year": 2002,
+      "span_years": 2,
+      "ticker": null,
+      "sector": "Motorsport venues and media rights",
+      "moat_summary": "I n discounting growth of just 3% to 4% the market valued the business as if it was just an average firm, when in our opinio n International Speedway is a rock -solid franchise with improving\u2026",
+      "letters": [
+        {
+          "letter_id": "2001-12-31-annual-letter",
+          "title": "18 January 2002 Letter",
+          "year": 2001,
+          "period_end": "2001-12-31"
+        },
+        {
+          "letter_id": "2002-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2002",
+          "year": 2002,
+          "period_end": "2002-06-30"
+        },
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Weetabix",
+      "mentions": 3,
+      "first_year": 2003,
+      "last_year": 2006,
+      "span_years": 4,
+      "ticker": null,
+      "sector": "Branded packaged food",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2003-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2003",
+          "year": 2003,
+          "period_end": "2003-06-30"
+        },
+        {
+          "letter_id": "2003-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2003",
+          "year": 2003,
+          "period_end": "2003-12-31"
+        },
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Conseco",
+      "mentions": 2,
+      "first_year": 2002,
+      "last_year": 2003,
+      "span_years": 2,
+      "ticker": null,
+      "sector": null,
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2003",
+          "year": 2003,
+          "period_end": "2003-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Dell",
+      "mentions": 2,
+      "first_year": 2004,
+      "last_year": 2007,
+      "span_years": 4,
+      "ticker": "DELL",
+      "sector": "Computers and enterprise hardware",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2007-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2007",
+          "year": 2007,
+          "period_end": "2007-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Ryanair",
+      "mentions": 2,
+      "first_year": 2008,
+      "last_year": 2009,
+      "span_years": 2,
+      "ticker": "RYAAY",
+      "sector": "Low-cost airlines",
+      "moat_summary": "This cost advantage is shared with the customers in the form of low fares, although the firm has borrowed from Ryanair as well who extended the Southwest model to include revenue enhancements such\u2026",
+      "letters": [
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "2009-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2009",
+          "year": 2009,
+          "period_end": "2009-06-30"
+        }
+      ]
+    }
+  ],
+  "recurring_companies": [
+    {
+      "name": "Costco",
+      "mentions": 9,
+      "first_year": 2002,
+      "last_year": 2013,
+      "span_years": 12,
+      "ticker": "COST",
+      "sector": "Membership retail",
+      "moat_summary": "This is a very simple and honest consumer proposition in the sense that the membership fee buys the customer's loyalty (and is almost all profit) and Costco in exchange sells goods whils t just\u2026",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2003",
+          "year": 2003,
+          "period_end": "2003-06-30"
+        },
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2005-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2005",
+          "year": 2005,
+          "period_end": "2005-06-30"
+        },
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "2008-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2008",
+          "year": 2008,
+          "period_end": "2008-12-31"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        },
+        {
+          "letter_id": "2010-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2010",
+          "year": 2010,
+          "period_end": "2010-06-30"
+        },
+        {
+          "letter_id": "2013-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2013",
+          "year": 2013,
+          "period_end": "2013-06-30"
+        }
+      ]
+    },
+    {
+      "name": "Amazon",
+      "mentions": 8,
+      "first_year": 2006,
+      "last_year": 2011,
+      "span_years": 6,
+      "ticker": "AMZN",
+      "sector": "Internet retail and cloud platforms",
+      "moat_summary": "Air Asia is an example of scale -economics shared, which like Amazon, Costco, Carpetright and elements of other businesses in the portfolio (Geico, Nebraska Furniture Mart) have come to dominate\u2026",
+      "letters": [
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        },
+        {
+          "letter_id": "2007-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2007",
+          "year": 2007,
+          "period_end": "2007-06-30"
+        },
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "2008-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2008",
+          "year": 2008,
+          "period_end": "2008-12-31"
+        },
+        {
+          "letter_id": "2009-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2009",
+          "year": 2009,
+          "period_end": "2009-06-30"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        },
+        {
+          "letter_id": "2010-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2010",
+          "year": 2010,
+          "period_end": "2010-06-30"
+        },
+        {
+          "letter_id": "2011-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2011",
+          "year": 2011,
+          "period_end": "2011-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Stagecoach",
+      "mentions": 7,
+      "first_year": 2002,
+      "last_year": 2009,
+      "span_years": 8,
+      "ticker": null,
+      "sector": "Passenger transport",
+      "moat_summary": "This time I would like to discuss our investment in Stagecoach (8.6% of Partnership assets) and Costco Wholesale (3.1% of Partnership assets).",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2003",
+          "year": 2003,
+          "period_end": "2003-12-31"
+        },
+        {
+          "letter_id": "2004-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2004",
+          "year": 2004,
+          "period_end": "2004-06-30"
+        },
+        {
+          "letter_id": "2006-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2006",
+          "year": 2006,
+          "period_end": "2006-06-30"
+        },
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        },
+        {
+          "letter_id": "2007-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2007",
+          "year": 2007,
+          "period_end": "2007-12-31"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        }
+      ]
+    },
+    {
+      "name": "Berkshire Hathaway",
+      "mentions": 6,
+      "first_year": 2002,
+      "last_year": 2009,
+      "span_years": 8,
+      "ticker": "BRK",
+      "sector": "Diversified holding company",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2004-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2004",
+          "year": 2004,
+          "period_end": "2004-06-30"
+        },
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2005-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2005",
+          "year": 2005,
+          "period_end": "2005-06-30"
+        },
+        {
+          "letter_id": "2008-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2008",
+          "year": 2008,
+          "period_end": "2008-06-30"
+        },
+        {
+          "letter_id": "December 31st 2009-annual-letter",
+          "title": "Annual Letter for December 31st 2009",
+          "year": 2009,
+          "period_end": "December 31st 2009"
+        }
+      ]
+    },
+    {
+      "name": "Matichon",
+      "mentions": 5,
+      "first_year": 2001,
+      "last_year": 2005,
+      "span_years": 5,
+      "ticker": null,
+      "sector": "Thai media and publishing",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2001-12-31-annual-letter",
+          "title": "18 January 2002 Letter",
+          "year": 2001,
+          "period_end": "2001-12-31"
+        },
+        {
+          "letter_id": "2002-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2002",
+          "year": 2002,
+          "period_end": "2002-06-30"
+        },
+        {
+          "letter_id": "2002-12-31-year-end-report",
+          "title": "Year End Report for December 31st, 2002",
+          "year": 2002,
+          "period_end": "2002-12-31"
+        },
+        {
+          "letter_id": "2003-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2003",
+          "year": 2003,
+          "period_end": "2003-06-30"
+        },
+        {
+          "letter_id": "2005-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2005",
+          "year": 2005,
+          "period_end": "2005-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Marathon",
+      "mentions": 4,
+      "first_year": 2001,
+      "last_year": 2006,
+      "span_years": 6,
+      "ticker": null,
+      "sector": null,
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2001-12-31-annual-letter",
+          "title": "18 January 2002 Letter",
+          "year": 2001,
+          "period_end": "2001-12-31"
+        },
+        {
+          "letter_id": "2004-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2004",
+          "year": 2004,
+          "period_end": "2004-06-30"
+        },
+        {
+          "letter_id": "2006-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2006",
+          "year": 2006,
+          "period_end": "2006-06-30"
+        },
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Wal-Mart",
+      "mentions": 4,
+      "first_year": 2004,
+      "last_year": 2012,
+      "span_years": 9,
+      "ticker": "WMT",
+      "sector": "Mass-market retail",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2004-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2004",
+          "year": 2004,
+          "period_end": "2004-12-31"
+        },
+        {
+          "letter_id": "2007-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2007",
+          "year": 2007,
+          "period_end": "2007-06-30"
+        },
+        {
+          "letter_id": "2009-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2009",
+          "year": 2009,
+          "period_end": "2009-06-30"
+        },
+        {
+          "letter_id": "2012-06-30-interim-letter",
+          "title": "Interim Letter for June 30th, 2012",
+          "year": 2012,
+          "period_end": "2012-06-30"
+        }
+      ]
+    },
+    {
+      "name": "Weetabix",
+      "mentions": 3,
+      "first_year": 2003,
+      "last_year": 2006,
+      "span_years": 4,
+      "ticker": null,
+      "sector": "Branded packaged food",
+      "moat_summary": "The moat thesis still needs a second-pass read anchored on the original passages.",
+      "letters": [
+        {
+          "letter_id": "2003-06-30-interim-report",
+          "title": "Interim Report for June 30th, 2003",
+          "year": 2003,
+          "period_end": "2003-06-30"
+        },
+        {
+          "letter_id": "2003-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2003",
+          "year": 2003,
+          "period_end": "2003-12-31"
+        },
+        {
+          "letter_id": "2006-12-31-annual-letter",
+          "title": "Annual Letter for December 31st, 2006",
+          "year": 2006,
+          "period_end": "2006-12-31"
+        }
+      ]
+    }
+  ],
+  "research_rich_letters": [
+    {
+      "id": "2002-12-31-year-end-report",
+      "title": "Year End Report for December 31st, 2002",
+      "year": 2002,
+      "letter_type": "Year End Report",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 10,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This year end report centers on Consumer Value Proposition, Management Alignment, and Patience & Long-Term Horizon. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Stagecoach, Georgica Plc, and Georgica. A representative thesis line is: Nor do we derive much pleasure from pointing out that the alternatives presented by the leading stock ma rket indices have fared much worse, but as we stated in the interim letter published in July, \u201cin weak or flat\u2026"
+    },
+    {
+      "id": "2003-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2003",
+      "year": 2003,
+      "letter_type": "Annual Letter",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 8,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Capital Allocation, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Weetabix, Stagecoach, and Stagecoach Plc. A representative thesis line is: It may also be worth reiterating that the results have been achieved without leverage, shorting, contracts for difference, options, synthetic structures (LYONs, PRIDEs, LEAPs, MASTs - we are not making these names up)\u2026"
+    },
+    {
+      "id": "2003-06-30-interim-report",
+      "title": "Interim Report for June 30th, 2003",
+      "year": 2003,
+      "letter_type": "Interim Report",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 7,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This interim report centers on Consumer Value Proposition, Management Alignment, and Capital Allocation. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Weetabix, Weetabix Limited, and Erie Indemnity Company. A representative thesis line is: You may even want to discount the results above for the Weetabix gain (but don't ask for a rebate on fees!)."
+    },
+    {
+      "id": "2008-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2008",
+      "year": 2008,
+      "letter_type": "Interim Letter",
+      "page_count": 12,
+      "theme_count": 5,
+      "company_count": 7,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Portfolio Construction. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Ryanair, Amazon, and Costco. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long - term inv estment performance."
+    },
+    {
+      "id": "2004-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2004",
+      "year": 2004,
+      "letter_type": "Interim Letter",
+      "page_count": 11,
+      "theme_count": 5,
+      "company_count": 6,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Portfolio Construction, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Marathon, Allan Gray Limited, and Browne Company. A representative thesis line is: We can promise you that any resemblance Nomad may have to the closet index trackers is entirely coincidental."
+    },
+    {
+      "id": "2009-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2009",
+      "year": 2009,
+      "letter_type": "Interim Letter",
+      "page_count": 10,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 4,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Portfolio Construction. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Wal-Mart, Amazon, and Ryanair. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long - term investment performance."
+    },
+    {
+      "id": "2002-06-30-interim-report",
+      "title": "Interim Report for June 30th, 2002",
+      "year": 2002,
+      "letter_type": "Interim Report",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 4,
+      "research_prompt_count": 3,
+      "summary": "This interim report centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include International Speedway, Matichon, and Xerox Corporation. A representative thesis line is: In the 1960 letter Buffett writes: \u201cI have pointed out that any superior record which we might accomplish should not be expected to be evidenced by a relatively constant advantage in performance compared to the Average."
+    },
+    {
+      "id": "December 31st 2009-annual-letter",
+      "title": "Annual Letter for December 31st 2009",
+      "year": 2009,
+      "letter_type": "Annual Letter",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Regulation & Industry Structure. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco, Amazon, and Berkshire Hathaway. A representative thesis line is: We do not feel strongly about the merits of the index we have chosen, and Partners may wish to use another."
+    }
+  ],
+  "letter_rows": [
+    {
+      "id": "2001-12-31-annual-letter",
+      "title": "18 January 2002 Letter",
+      "year": 2001,
+      "letter_type": "Annual Letter",
+      "page_count": 3,
+      "theme_count": 5,
+      "company_count": 3,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Portfolio Construction. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include International Speedway, Matichon, and Marathon. A representative thesis line is: We expect to beat the index handsomely over time, but only as a byproduct of our absolute return orientation."
+    },
+    {
+      "id": "2002-06-30-interim-report",
+      "title": "Interim Report for June 30th, 2002",
+      "year": 2002,
+      "letter_type": "Interim Report",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 4,
+      "research_prompt_count": 3,
+      "summary": "This interim report centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include International Speedway, Matichon, and Xerox Corporation. A representative thesis line is: In the 1960 letter Buffett writes: \u201cI have pointed out that any superior record which we might accomplish should not be expected to be evidenced by a relatively constant advantage in performance compared to the Average."
+    },
+    {
+      "id": "2002-12-31-year-end-report",
+      "title": "Year End Report for December 31st, 2002",
+      "year": 2002,
+      "letter_type": "Year End Report",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 10,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This year end report centers on Consumer Value Proposition, Management Alignment, and Patience & Long-Term Horizon. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Stagecoach, Georgica Plc, and Georgica. A representative thesis line is: Nor do we derive much pleasure from pointing out that the alternatives presented by the leading stock ma rket indices have fared much worse, but as we stated in the interim letter published in July, \u201cin weak or flat\u2026"
+    },
+    {
+      "id": "2003-06-30-interim-report",
+      "title": "Interim Report for June 30th, 2003",
+      "year": 2003,
+      "letter_type": "Interim Report",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 7,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This interim report centers on Consumer Value Proposition, Management Alignment, and Capital Allocation. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Weetabix, Weetabix Limited, and Erie Indemnity Company. A representative thesis line is: You may even want to discount the results above for the Weetabix gain (but don't ask for a rebate on fees!)."
+    },
+    {
+      "id": "2003-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2003",
+      "year": 2003,
+      "letter_type": "Annual Letter",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 8,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Capital Allocation, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Weetabix, Stagecoach, and Stagecoach Plc. A representative thesis line is: It may also be worth reiterating that the results have been achieved without leverage, shorting, contracts for difference, options, synthetic structures (LYONs, PRIDEs, LEAPs, MASTs - we are not making these names up)\u2026"
+    },
+    {
+      "id": "2004-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2004",
+      "year": 2004,
+      "letter_type": "Interim Letter",
+      "page_count": 11,
+      "theme_count": 5,
+      "company_count": 6,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Portfolio Construction, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Marathon, Allan Gray Limited, and Browne Company. A representative thesis line is: We can promise you that any resemblance Nomad may have to the closet index trackers is entirely coincidental."
+    },
+    {
+      "id": "2004-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2004",
+      "year": 2004,
+      "letter_type": "Annual Letter",
+      "page_count": 13,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Regulation & Industry Structure, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco, eBay, and Wal-Mart. A representative thesis line is: Correspondingly, opposite characteristics - a high ratio of price to book value, a high price-earnings ratio, a low dividend yield - are in no way inconsistent with a \u201cvalue\u201d purchase.\u201d Source: Berkshire Hathaway 1992\u2026"
+    },
+    {
+      "id": "2005-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2005",
+      "year": 2005,
+      "letter_type": "Interim Letter",
+      "page_count": 13,
+      "theme_count": 5,
+      "company_count": 3,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Business Quality & Moats, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco and Berkshire Hathaway. A representative thesis line is: In our opinion, it is the upper table that is most useful in assessing long -term investment performance (see appendix)."
+    },
+    {
+      "id": "2005-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2005",
+      "year": 2005,
+      "letter_type": "Annual Letter",
+      "page_count": 21,
+      "theme_count": 5,
+      "company_count": 4,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Behavioral Psychology, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Matichon, Berkshire Hathaway Company, and Vanguard Group. A representative thesis line is: In our opinion, it is the table above that is most useful in assessing long-term investment performance (see appendix)."
+    },
+    {
+      "id": "2006-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2006",
+      "year": 2006,
+      "letter_type": "Interim Letter",
+      "page_count": 9,
+      "theme_count": 5,
+      "company_count": 2,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Behavioral Psychology. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Marathon and Stagecoach. A representative thesis line is: This somewhat artificial separation should only be necessary for this letter whilst the handover i s pending."
+    },
+    {
+      "id": "2006-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2006",
+      "year": 2006,
+      "letter_type": "Annual Letter",
+      "page_count": 14,
+      "theme_count": 5,
+      "company_count": 4,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Management Alignment, and Portfolio Construction. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Amazon, Marathon, and Weetabix. A representative thesis line is: In our opinion it is the upp er table that is most useful in assessing long -term investment performance."
+    },
+    {
+      "id": "2007-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2007",
+      "year": 2007,
+      "letter_type": "Interim Letter",
+      "page_count": 9,
+      "theme_count": 5,
+      "company_count": 2,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Portfolio Construction, and Regulation & Industry Structure. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Amazon and Wal-Mart. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long-term investment performance."
+    },
+    {
+      "id": "2007-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2007",
+      "year": 2007,
+      "letter_type": "Annual Letter",
+      "page_count": 11,
+      "theme_count": 5,
+      "company_count": 3,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Management Alignment, and Regulation & Industry Structure. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Dell, Stagecoach, and Abu Dhabi Oil Company. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long-term investment performance."
+    },
+    {
+      "id": "2008-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2008",
+      "year": 2008,
+      "letter_type": "Interim Letter",
+      "page_count": 12,
+      "theme_count": 5,
+      "company_count": 7,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Portfolio Construction. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Ryanair, Amazon, and Costco. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long - term inv estment performance."
+    },
+    {
+      "id": "2008-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2008",
+      "year": 2008,
+      "letter_type": "Annual Letter",
+      "page_count": 9,
+      "theme_count": 5,
+      "company_count": 2,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Management Alignment, and Regulation & Industry Structure. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco and Amazon. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long - term investment performance."
+    },
+    {
+      "id": "2009-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2009",
+      "year": 2009,
+      "letter_type": "Interim Letter",
+      "page_count": 10,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 4,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Portfolio Construction. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Wal-Mart, Amazon, and Ryanair. A representative thesis line is: In our opinion it is the upper table that is most useful in assessing long - term investment performance."
+    },
+    {
+      "id": "December 31st 2009-annual-letter",
+      "title": "Annual Letter for December 31st 2009",
+      "year": 2009,
+      "letter_type": "Annual Letter",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 5,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Regulation & Industry Structure. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco, Amazon, and Berkshire Hathaway. A representative thesis line is: We do not feel strongly about the merits of the index we have chosen, and Partners may wish to use another."
+    },
+    {
+      "id": "2010-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2010",
+      "year": 2010,
+      "letter_type": "Interim Letter",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 2,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Scale Economies Shared. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco and Amazon. A representative thesis line is: We do not feel strongly about the merits of the index we have chosen, and Partners may wish to use another."
+    },
+    {
+      "id": "2011-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2011",
+      "year": 2011,
+      "letter_type": "Interim Letter",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 0,
+      "claim_count": 5,
+      "artifact_count": 3,
+      "research_prompt_count": 2,
+      "summary": "This interim letter centers on Consumer Value Proposition, Regulation & Industry Structure, and Patience & Long-Term Horizon. It frames alignment over activity as a practical edge for partners willing to hold through noise. A representative thesis line is: We do not feel strongly about the merits of the index we have chosen, and partners may wish to use another."
+    },
+    {
+      "id": "2011-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2011",
+      "year": 2011,
+      "letter_type": "Annual Letter",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 3,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This annual letter centers on Consumer Value Proposition, Patience & Long-Term Horizon, and Capital Allocation. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Amazon and Black Arrow Group. A representative thesis line is: We do not feel strongly about the merits of the index we have chosen, and partners may wish to use another."
+    },
+    {
+      "id": "2012-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2012",
+      "year": 2012,
+      "letter_type": "Interim Letter",
+      "page_count": 7,
+      "theme_count": 4,
+      "company_count": 1,
+      "claim_count": 5,
+      "artifact_count": 4,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Regulation & Industry Structure. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Wal-Mart. A representative thesis line is: In our opinion, it is probably the upper table that is most useful in assessing longterm investment performance."
+    },
+    {
+      "id": "2012-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2012",
+      "year": 2012,
+      "letter_type": "Annual Letter",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 0,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 2,
+      "summary": "This annual letter centers on Consumer Value Proposition, Regulation & Industry Structure, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. A representative thesis line is: In our opinion, it is probably the upper table that is most useful in assessing long-term investment performance."
+    },
+    {
+      "id": "2013-06-30-interim-letter",
+      "title": "Interim Letter for June 30th, 2013",
+      "year": 2013,
+      "letter_type": "Interim Letter",
+      "page_count": 6,
+      "theme_count": 5,
+      "company_count": 1,
+      "claim_count": 5,
+      "artifact_count": 2,
+      "research_prompt_count": 3,
+      "summary": "This interim letter centers on Consumer Value Proposition, Management Alignment, and Patience & Long-Term Horizon. It frames alignment over activity as a practical edge for partners willing to hold through noise. Named businesses in focus include Costco. A representative thesis line is: We do not feel strongly about the merits, or otherwise, of this particular index, indeed its continued inclusion here may have more to do with continuity than relevance, and we would encourage partners to employ\u2026"
+    },
+    {
+      "id": "2013-12-31-annual-letter",
+      "title": "Annual Letter for December 31st, 2013",
+      "year": 2013,
+      "letter_type": "Annual Letter",
+      "page_count": 7,
+      "theme_count": 5,
+      "company_count": 0,
+      "claim_count": 5,
+      "artifact_count": 1,
+      "research_prompt_count": 2,
+      "summary": "This annual letter centers on Consumer Value Proposition, Regulation & Industry Structure, and Management Alignment. It frames alignment over activity as a practical edge for partners willing to hold through noise. A representative thesis line is: We do not feel strongly about the merits, or otherwise, of this particular index, indeed its continued inclusion here may have more to do with continuity than relevance, and we would encourage partners to employ\u2026"
+    }
+  ],
+  "event_type_counts": [
+    {
+      "name": "company_discussed",
+      "count": 88
+    },
+    {
+      "name": "thesis_claim",
+      "count": 48
+    },
+    {
+      "name": "letter_published",
+      "count": 24
+    }
+  ],
+  "artifact_kind_counts": [
+    {
+      "name": "performance_snippet",
+      "count": 37
+    },
+    {
+      "name": "historical_reference_placeholder",
+      "count": 24
+    },
+    {
+      "name": "chart_reference",
+      "count": 4
+    }
+  ],
+  "external_questions": [
+    {
+      "question": "Did the recurring companies outperform after they first appeared?",
+      "needs": "Market returns and benchmark data by first-mention date.",
+      "factiq_fit": "Use market data and fundamentals for tickers such as COST and AMZN."
+    },
+    {
+      "question": "Were the letters early to consumer value and scale-economies ideas?",
+      "needs": "Company fundamentals, category prices, margins, and earnings-call language.",
+      "factiq_fit": "Use fundamentals, CPI/category data, and earnings-call search."
+    },
+    {
+      "question": "Did patience matter more in low-rate or high-rate regimes?",
+      "needs": "Rates, inflation, market drawdowns, and recovery windows.",
+      "factiq_fit": "Use official macro data plus market series."
+    },
+    {
+      "question": "Which claims are falsifiable versus purely interpretive?",
+      "needs": "A claim ledger linked to market, accounting, and operating outcomes.",
+      "factiq_fit": "Use FactIQ for the data-linked claims; keep interpretive claims separate."
+    }
+  ]
+}
